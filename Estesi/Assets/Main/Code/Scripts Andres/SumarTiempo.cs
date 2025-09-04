@@ -1,15 +1,14 @@
-using Unity.VisualScripting;
 using UnityEngine;
 
-public class Puntos : MonoBehaviour
+public class SumarTiempo : MonoBehaviour
 {
-    [SerializeField] private Gamemanager gameManager;
+    [SerializeField] private Gamemanager gmanager;
     private void OnTriggerEnter2D(Collider2D collision)
 
     {
         if (collision.gameObject.tag == "Player")
         {
-            gameManager.Sumarpunto(1);
+            gmanager.SumarTiempo(30);
             Destroy(this.gameObject);
 
         }

@@ -1,56 +1,110 @@
 using UnityEngine;
+using Unity.VisualScripting;
 using UnityEngine.SceneManagement;
+using TMPro;
 
-public class GameManager : MonoBehaviour
+public class Gamemanager : MonoBehaviour
 {
-   [SerializeField]
-   private int _puntos;
-   [SerializeField]
-   private int _vida = 10;
-   [SerializeField]
-   private float _tiempo = 60;
+    //variables
 
-   [SerializeField]
-   private int _tiempoEntero;
-
-   private void Update()
-   {
-    if (_tiempo > 0)
-    {
-        _tiempo -= Time.deltaTime;
-        _tiempoEntero = (int)_tiempo;
-
-        Debug.Log("Tiempo restante: " + Mathf.CeilToInt(_tiempo)) ;
-    }
-    if (_tiempo <=0)
-    {
-
-        SceneManager.LoadScene("Taller");
-
-    }
-   }
+    [SerializeField] public static int puntos = 9;
+    [SerializeField] private int vida = 10;
+    [SerializeField] private float tiempo = 60f;
+    [SerializeField] private int tiempoE;
+    [SerializeField] public bool llave;
    
-   public void SumarPuntos(int cantidad)
-   {
-    _puntos +=cantidad;
 
-   }
+    //TMP
+    [SerializeField] private TMP_Text _puntos;
+    [SerializeField] private TMP_Text _tiempoE;
+    [SerializeField] private TMP_Text _vida;
+    [SerializeField] private TMP_Text _llave;
+    //
+
+    // Suma de puntos y actualizacion de UI
+//public bool llave = true;
+public void salida()
+{
+    SceneManager.LoadScene("Victoria");
+}
 
 
+    public bool Llave = false;
+    public void estado()
+    {
+        llave = true;
+        
+    }
+
+    public void Sumarpunto(int cantidad)
+    {
+        puntos += cantidad;
+
+    }
     public void RestarVida(int cantidad)
     {
-        if (_vida <= 0)
+        vida -= cantidad;
+        
+        if (vida <= 0)
         {
-
-        SceneManager.LoadScene("propiedades");
+            SceneManager.LoadScene("Taller");
         }
 
-    
-    else
-    {
-        _vida -=cantidad;
     }
 
-   }
+        public void Sumarvida(int cantidad)
+    {
+        vida += cantidad;
+
+    }
+
+            public void SumarTiempo(int cantidad)
+    {
+        tiempo += cantidad;
+
+    }
+
+    private void Update()
+    {
+        if (tiempo > 0)
+        {
+            tiempo -= Time.deltaTime;
+            tiempoE = (int)tiempo;
+        }
+        if (tiempo <= 0)
+        {
+
+            SceneManager.LoadScene("Taller");
+
+        }
+
+        //if SceneManager.LoadScene("Taller")
+
     
+
+
+        {
+            _puntos.text = "puntos: " + puntos;  //se actualizara cuando haga contacto con el item
+
+            _tiempoE.text = "Tiempo: " + tiempoE;
+
+            _vida.text = "vida: " + vida;
+
+            _llave.text = "Llave: " + llave; 
+
+        }
+    }
 }
+    
+
+
+        
+
+
+
+
+
+
+
+
+
