@@ -7,7 +7,7 @@ public class Gamemanager : MonoBehaviour
 {
     //variables
 
-    [SerializeField] public static int puntos = 9;
+    [SerializeField] public static int puntos = 0;
     [SerializeField] private int vida = 10;
     [SerializeField] private float tiempo = 60f;
     [SerializeField] private int tiempoE;
@@ -28,8 +28,6 @@ public void salida()
     SceneManager.LoadScene("Victoria");
 }
 
-
-    public bool Llave = false;
     public void estado()
     {
         llave = true;
