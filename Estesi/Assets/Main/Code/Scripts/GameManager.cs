@@ -12,18 +12,47 @@ public class Gamemanager : MonoBehaviour
     [SerializeField] private float tiempo = 60f;
     [SerializeField] private int tiempoE;
     [SerializeField] public bool llave;
-   
+
 
     //TMP
     [SerializeField] private TMP_Text _puntos;
     [SerializeField] private TMP_Text _tiempoE;
     [SerializeField] private TMP_Text _vida;
     [SerializeField] private TMP_Text _llave;
-    //
+    [SerializeField] private TMP_Text _jugador;
+
+
+    // Estado del juego
+
+    public void EstadoDelJugador()
+    {
+        if (vida == 1)
+        {
+            _jugador.text = "Busca curacion";
+        }
+        else if (vida == 5)
+        {
+            _jugador.text = "Cuidado";
+        }
+        else if (vida >= 10)
+        {
+            _jugador.text = "Estás bien";
+        }
+        if (vida <= 0)
+        {
+            _jugador.text = "murio";
+        }
+
+
+
+
+    }
+
+
 
     // Suma de puntos y actualizacion de UI
-//public bool llave = true;
-public void salida()
+    //public bool llave = true;
+    public void salida()
 {
     SceneManager.LoadScene("Victoria");
 }
@@ -31,13 +60,12 @@ public void salida()
     public void estado()
     {
         llave = true;
-        
+      
     }
 
     public void Sumarpunto(int cantidad)
     {
         puntos += cantidad;
-
     }
     public void RestarVida(int cantidad)
     {
@@ -53,6 +81,7 @@ public void salida()
         public void Sumarvida(int cantidad)
     {
         vida += cantidad;
+
 
     }
 
@@ -88,7 +117,9 @@ public void salida()
 
             _vida.text = "vida: " + vida;
 
-            _llave.text = "Llave: " + llave; 
+            _llave.text = "Llave: " + llave;
+
+            EstadoDelJugador();
 
         }
     }
