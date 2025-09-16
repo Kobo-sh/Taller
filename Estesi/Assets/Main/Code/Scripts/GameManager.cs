@@ -43,9 +43,31 @@ public class Gamemanager : MonoBehaviour
             _jugador.text = "murio";
         }
 
+    }
 
+    public void EstadoDelJuego(string estado)
+    {
+        switch (estado)
+        {
+            case "Play":
+                Time.timeScale = 1;
+                break;
 
+            case "Pause":
+                Time.timeScale = 0;
+                break;
 
+            case "Ganaste":
+                //Cargar escena de victoria
+                break;
+
+            case "Perdiste":
+                //cargar escena de perdiste
+                break;
+            case "salir":
+                Application.Quit();
+                break;
+        }
     }
 
 
