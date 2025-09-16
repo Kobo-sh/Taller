@@ -7,9 +7,9 @@ public class Final : MonoBehaviour
    [SerializeField] public Gamemanager Gamemanager;
     private void OnCollisionEnter2D(Collision2D collision)
    {
-    if (collision.gameObject.CompareTag("Player"))
+    if (collision.gameObject.CompareTag("Player") && Gamemanager.llave == true) 
     {
-        if (Gamemanager.llave == true)
+        //if (Gamemanager.llave == true)
         {
             SceneManager.LoadScene("Victoria");
             Time.timeScale = 0f;

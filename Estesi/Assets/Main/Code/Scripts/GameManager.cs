@@ -19,10 +19,11 @@ public class Gamemanager : MonoBehaviour
     [SerializeField] private TMP_Text _tiempoE;
     [SerializeField] private TMP_Text _vida;
     [SerializeField] private TMP_Text _llave;
-    //
+    
 
     // Suma de puntos y actualizacion de UI
-//public bool llave = true;
+    //public bool llave = true;
+
 public void salida()
 {
     SceneManager.LoadScene("Victoria");
@@ -78,9 +79,7 @@ public void salida()
 
         //if SceneManager.LoadScene("Taller")
 
-    
-
-
+        
         {
             _puntos.text = "puntos: " + puntos;  //se actualizara cuando haga contacto con el item
 
@@ -92,6 +91,21 @@ public void salida()
 
         }
     }
+
+    public void EstadoDelJuego(string estado)
+    {
+        switch (estado)
+        {
+
+        case "Play":
+            Time.timeScale = 1;
+            break;
+        case "Pause":
+            Time.timeScale = 0;
+            break;
+        }
+    }    
+    
 }
     
 
