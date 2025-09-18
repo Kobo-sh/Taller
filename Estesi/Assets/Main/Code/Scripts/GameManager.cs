@@ -58,7 +58,7 @@ public class Gamemanager : MonoBehaviour
                 break;
 
             case "Ganaste":
-                //Cargar escena de victoria
+                SceneManager.LoadScene("Victoria");
                 break;
 
             case "Perdiste":
