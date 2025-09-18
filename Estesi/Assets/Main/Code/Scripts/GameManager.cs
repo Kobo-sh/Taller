@@ -77,8 +77,6 @@ public void salida()
 
         }
 
-        //if SceneManager.LoadScene("Taller")
-
         
         {
             _puntos.text = "puntos: " + puntos;  //se actualizara cuando haga contacto con el item
@@ -103,8 +101,13 @@ public void salida()
         case "Pause":
             Time.timeScale = 0;
             break;
+        case "Quit":
+            Application.Quit();
+            break;
         }
     }    
+
+
     
 }
     
