@@ -47,6 +47,11 @@ public class Controles : MonoBehaviour
             {
                 rb2d.AddForce(new Vector4( 0f,3f )* fuerza);
             }
+
+        if (Input.GetKey(KeyCode.Escape))
+        {
+            
+        }
         
     }
 }

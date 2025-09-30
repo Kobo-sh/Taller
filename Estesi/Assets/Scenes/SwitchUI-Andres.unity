@@ -360,6 +360,55 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &222928748
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 222928750}
+  - component: {fileID: 222928749}
+  m_Layer: 0
+  m_Name: UImanager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &222928749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 222928748}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474d6705518ae0f47a5bd5541d55e31d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  titulotext: {fileID: 0}
+  advertenciatext: {fileID: 0}
+  respuestaInput: {fileID: 0}
+  enviarButton: {fileID: 0}
+  edad: 0
+--- !u!4 &222928750
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 222928748}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 565.7097, y: 243.58647, z: -3.4202092}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &653899325
 GameObject:
   m_ObjectHideFlags: 0
@@ -716,6 +765,7 @@ GameObject:
   - component: {fileID: 1108128517}
   - component: {fileID: 1108128516}
   - component: {fileID: 1108128515}
+  - component: {fileID: 1108128518}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -784,6 +834,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1108128518
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1108128514}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474d6705518ae0f47a5bd5541d55e31d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  titulotext: {fileID: 0}
+  advertenciatext: {fileID: 0}
+  respuestaInput: {fileID: 0}
+  enviarButton: {fileID: 0}
+  edad: 0
 --- !u!1 &1199800016
 GameObject:
   m_ObjectHideFlags: 0
@@ -1431,10 +1498,10 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_NormalColor: {r: 0.9339623, g: 0.9339623, b: 0.9339623, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_SelectedColor: {r: 0, g: 0.9329295, b: 1, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -1453,7 +1520,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1938989884}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 222928749}
+        m_TargetAssemblyTypeName: UImanager, Assembly-CSharp
+        m_MethodName: FuncionDelBoton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1938989884
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1499,3 +1578,4 @@ SceneRoots:
   - {fileID: 1759596502}
   - {fileID: 156173806}
   - {fileID: 1108128517}
+  - {fileID: 222928750}

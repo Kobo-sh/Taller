@@ -12,6 +12,7 @@ public class Gamemanager : MonoBehaviour
     [SerializeField] private float tiempo = 60f;
     [SerializeField] private int tiempoE;
     [SerializeField] public bool llave;
+    [SerializeField] private GameObject menu;
 
 
     //TMP
@@ -62,10 +63,11 @@ public class Gamemanager : MonoBehaviour
                 break;
 
             case "Perdiste":
-                //cargar escena de perdiste
+                SceneManager.LoadScene("Derrotra");
                 break;
             case "salir":
                 Application.Quit();
+                //Debug.Log("funciona"); compruebo la funcionalidad
                 break;
         }
     }
@@ -75,14 +77,14 @@ public class Gamemanager : MonoBehaviour
     // Suma de puntos y actualizacion de UI
     //public bool llave = true;
     public void salida()
-{
-    SceneManager.LoadScene("Victoria");
-}
+    {
+        SceneManager.LoadScene("Victoria");
+    }
 
     public void estado()
     {
         llave = true;
-      
+
     }
 
     public void Sumarpunto(int cantidad)
@@ -92,22 +94,22 @@ public class Gamemanager : MonoBehaviour
     public void RestarVida(int cantidad)
     {
         vida -= cantidad;
-        
-        if (vida <= 0)
+
+        if (vida == 0)
         {
-            SceneManager.LoadScene("Taller");
+            SceneManager.LoadScene("Derrota");
         }
 
     }
 
-        public void Sumarvida(int cantidad)
+    public void Sumarvida(int cantidad)
     {
         vida += cantidad;
 
 
     }
 
-            public void SumarTiempo(int cantidad)
+    public void SumarTiempo(int cantidad)
     {
         tiempo += cantidad;
 
@@ -123,13 +125,13 @@ public class Gamemanager : MonoBehaviour
         if (tiempo <= 0)
         {
 
-            SceneManager.LoadScene("Taller");
+            SceneManager.LoadScene("Derrota");
 
         }
 
         //if SceneManager.LoadScene("Taller")
 
-    
+
 
 
         {
@@ -143,6 +145,12 @@ public class Gamemanager : MonoBehaviour
 
             EstadoDelJugador();
 
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                EstadoDelJuego("Pause");       // Pausa el juego
+                menu.SetActive(true);    // Muestra el panel de pausa
+
+            }
         }
     }
 }

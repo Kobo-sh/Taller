@@ -8,12 +8,18 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Taller.unity
     guid: 6f709a3258398e545bc0f4afdd379a21
   - enabled: 1
     path: Assets/Scenes/Victoria.unity
     guid: 5260025a3a06bc946a124d1552bdc132
+  - enabled: 1
+    path: Assets/Scenes/Taller Andres.unity
+    guid: 3478ada5d6210f4419784b5d32aed59a
+  - enabled: 1
+    path: Assets/Scenes/Derrota.unity
+    guid: 1146de18c094a1c4b91d80e2baf0f5c0
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

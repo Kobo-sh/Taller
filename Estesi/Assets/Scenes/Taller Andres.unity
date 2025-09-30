@@ -2843,6 +2843,7 @@ MonoBehaviour:
   tiempo: 60
   tiempoE: 60
   llave: 0
+  menu: {fileID: 1404036541}
   _puntos: {fileID: 2048986666}
   _tiempoE: {fileID: 1987724829}
   _vida: {fileID: 1484339417}
@@ -8803,7 +8804,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 767091476}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 385053737}
+        m_TargetAssemblyTypeName: Gamemanager, Assembly-CSharp
+        m_MethodName: EstadoDelJuego
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: salir
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &767091476
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28883,8 +28896,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 214193c35926e7149b8484a52f89a1d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb2d: {fileID: 0}
+  rb2d: {fileID: 1972109206}
   fuerza: 100
+--- !u!50 &1972109206 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 8162355987774026208, guid: a3879484d58e7e84aae7907b2f321e29, type: 3}
+  m_PrefabInstance: {fileID: 5775385649602325139}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1987724827
 GameObject:
   m_ObjectHideFlags: 0
