@@ -12,7 +12,7 @@ public class Final : MonoBehaviour
         if (Gamemanager.llave == true)
         {
             SceneManager.LoadScene("Victoria");
-            Time.timeScale = 0f;
+           
         }
     }
     else

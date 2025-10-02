@@ -2,12 +2,13 @@ using UnityEngine;
 
 public class Obstaculo : MonoBehaviour
 {
+    [SerializeField] private Gamemanager game;
+
     void Update()
     {
-        if( Gamemanager.puntos >= 10)
-        {  Destroy(this.gameObject);
-}
-    
-    
+        if (game.puntos >= 10)
+        {
+            Destroy(this.gameObject);
+        }
     }
 }

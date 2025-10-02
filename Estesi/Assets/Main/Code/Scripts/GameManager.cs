@@ -2,17 +2,19 @@ using UnityEngine;
 using Unity.VisualScripting;
 using UnityEngine.SceneManagement;
 using TMPro;
+using UnityEngine.UI;
 
 public class Gamemanager : MonoBehaviour
 {
     //variables
 
-    [SerializeField] public static int puntos = 0;
-    [SerializeField] private int vida = 10;
+    [SerializeField] public int puntos = 0;
+    [SerializeField] private int vida = 5;
     [SerializeField] private float tiempo = 60f;
     [SerializeField] private int tiempoE;
     [SerializeField] public bool llave;
     [SerializeField] private GameObject menu;
+
 
 
     //TMP
@@ -63,11 +65,16 @@ public class Gamemanager : MonoBehaviour
                 break;
 
             case "Perdiste":
-                SceneManager.LoadScene("Derrotra");
+                SceneManager.LoadScene("Derrota");
                 break;
+
+            case "Reintentar":
+                SceneManager.LoadScene("Taller Andres");
+                break;
+
             case "salir":
                 Application.Quit();
-                //Debug.Log("funciona"); compruebo la funcionalidad
+                //Debug.Log("funciona"); 
                 break;
         }
     }
@@ -84,6 +91,7 @@ public class Gamemanager : MonoBehaviour
     public void estado()
     {
         llave = true;
+        EstadoDelJuego("Ganaste");
 
     }
 
@@ -97,7 +105,7 @@ public class Gamemanager : MonoBehaviour
 
         if (vida == 0)
         {
-            SceneManager.LoadScene("Derrota");
+            EstadoDelJuego("Perdiste");
         }
 
     }
@@ -125,7 +133,7 @@ public class Gamemanager : MonoBehaviour
         if (tiempo <= 0)
         {
 
-            SceneManager.LoadScene("Derrota");
+            EstadoDelJuego("Perdiste");
 
         }
 
