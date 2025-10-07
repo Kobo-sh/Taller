@@ -1139,6 +1139,12 @@ MonoBehaviour:
   _llave: {fileID: 207275205}
   _jugador: {fileID: 229132043}
   menu: {fileID: 1404036541}
+  imagenesVida:
+  - {fileID: 1364114956}
+  - {fileID: 4041038}
+  - {fileID: 371664954}
+  - {fileID: 273619579}
+  - {fileID: 611519385}
 --- !u!4 &156258036
 Transform:
   m_ObjectHideFlags: 0

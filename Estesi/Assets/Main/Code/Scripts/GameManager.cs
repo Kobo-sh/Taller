@@ -10,16 +10,14 @@ public class Gamemanager : MonoBehaviour
     [SerializeField] private int tiempoE;
     [SerializeField] public bool llave;
 
-    // Referencia al UIManager
+    // Referencia al UIManager para actualizar visuales
     [SerializeField] private UIManager uiManager;
 
     private void Update()
-
     {
-        // 🔹 Detectar la escena actual
+        // Detectar la escena actual
         string escenaActual = SceneManager.GetActiveScene().name;
 
-        // 🔹 Solo ejecutar el temporizador y la interfaz si estamos en la escena principal del juego
         if (escenaActual == "Taller Andres")
         {
             if (tiempo > 0)
@@ -32,9 +30,7 @@ public class Gamemanager : MonoBehaviour
                 EstadoDelJuego("Perdiste");
             }
 
-
-
-            // Actualizar interfaz 
+            
             uiManager.ActualizarInterfaz(puntos, tiempoE, vida, llave);
 
             uiManager.EstadoDelJugador(vida);
@@ -46,6 +42,7 @@ public class Gamemanager : MonoBehaviour
             }
         }
     }
+
     public void EstadoDelJuego(string estado)
     {
         switch (estado)
@@ -72,7 +69,6 @@ public class Gamemanager : MonoBehaviour
 
             case "salir":
                 Application.Quit();
-
                 Debug.Log("funciona!");
                 break;
         }
@@ -97,17 +93,23 @@ public class Gamemanager : MonoBehaviour
     {
         vida -= cantidad;
 
-        if (vida == 0)
+        if (vida <= 0)
         {
+            vida = 0;
             EstadoDelJuego("Perdiste");
         }
+
+        
+        uiManager.ActualizarVidaVisual(vida);
     }
-
-
 
     public void Sumarvida(int cantidad)
     {
         vida += cantidad;
+        if (vida > 5) vida = 5;
+
+        
+        uiManager.ActualizarVidaVisual(vida);
     }
 
     public void SumarTiempo(int cantidad)
@@ -117,7 +119,6 @@ public class Gamemanager : MonoBehaviour
 }
 
 
-        
 
 
 

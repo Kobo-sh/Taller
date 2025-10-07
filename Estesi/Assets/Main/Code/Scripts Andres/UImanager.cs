@@ -4,15 +4,20 @@ using UnityEngine.UI;
 public class UImanager : MonoBehaviour
 {
     [SerializeField] private TMP_Text titulotext;
+
     [SerializeField] private TMP_Text advertenciatext;
 
     [SerializeField] private TMP_InputField respuestaInput;
+
+
 
     [SerializeField] Button enviarButton;
 
     //variable
 
     [SerializeField] int edad;
+
+    [SerializeField] private GameObject[] imagenesVida;
 
     private void Start()
     {
@@ -29,4 +34,8 @@ public class UImanager : MonoBehaviour
         edad = int.Parse(respuestaInput.textComponent.text);
 
     }
+
+
+
+
 }

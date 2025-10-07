@@ -11,25 +11,24 @@ public class UIManager : MonoBehaviour
     [SerializeField] private TMP_Text _jugador;
     [SerializeField] private GameObject menu;
 
-    // Actualiza los textos visuales sin modificar lógica
+    
+    [SerializeField] private GameObject[] imagenesVida;
+
+   
     public void ActualizarInterfaz(int puntos, int tiempoE, int vida, bool llave)
     {
-        _puntos.text = "puntos: " + puntos;
-
+        _puntos.text = "Puntos: " + puntos;
         _tiempoE.text = "Tiempo: " + tiempoE;
-
-       _vida.text = "vida: " + vida;
-
+        _vida.text = "Vida: " + vida;
         _llave.text = "Llave: " + llave;
     }
 
-    // Muestra el estado del jugador según la vida
+    
     public void EstadoDelJugador(int vida)
     {
-
         if (vida == 3)
         {
-            _jugador.text = "Busca curacion";
+            _jugador.text = "Busca curación";
         }
         else if (vida == 5)
         {
@@ -41,10 +40,21 @@ public class UIManager : MonoBehaviour
         }
     }
 
-    // Control del menú de pausa
+    
     public void MostrarMenu(bool activo)
     {
         if (menu != null)
             menu.SetActive(activo);
+    }
+
+   
+    public void ActualizarVidaVisual(int cantidadVida)
+    {
+        if (imagenesVida == null) return;
+
+        for (int i = 0; i < imagenesVida.Length; i++)
+        {
+            imagenesVida[i].SetActive(i < cantidadVida);
+        }
     }
 }
