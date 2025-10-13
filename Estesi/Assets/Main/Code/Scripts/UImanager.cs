@@ -1,36 +1,37 @@
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using JetBrains.Annotations;
 
 public class UImanager : MonoBehaviour
 {
-    [SerializeField]
-    private TMP_Text tituloText;
-    [SerializeField]
-    private TMP_Text alertasText;
 
-    [SerializeField]
-    private TMP_InputField respuestaInput;
 
-    [SerializeField]
-    private Button enviarButton;
-
-    private void start()
+    //corazon funcionamiento
+  
+    [SerializeField] private UIitems[] corazones;
+    [SerializeField] private Gamemanager VidaJugador;
+    private void Start()
     {
-        //tituloText.text = "Introduce tu edad..." forma de hacerlo desde el codigo
-        alertasText.text = "";
-        enviarButton.onClick.AddListener(FuncionDelBoton);
-
-        //en el primer frame del juego el boton va a estar escuchando siempre al evento OnClick
+        VidaJugador = FindFirstObjectByType<Gamemanager>();
 
     }
 
-    public void FuncionDelBoton()
+    private void ActivarCorazones(int vida)
     {
-        int edad = int.Parse(respuestaInput.textComponent.text);
+        for (int i = 0; i < corazones.Length; i++)
+        {
+            if (i < vida)
+            {
+                corazones[i].ActivarCorazon();
+            }
+            else
+            {
+                corazones[i].DesactivarCorazon();
+            }
+        
+        
 
+        }
     }
-
-
 }
-   
