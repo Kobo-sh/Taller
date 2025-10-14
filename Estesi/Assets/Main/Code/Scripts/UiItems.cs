@@ -9,6 +9,7 @@ public class UIitems : MonoBehaviour
 {
 
     //funcionamiento corazones imagenes
+    
 
     [SerializeField] private Image CorazonImagen;
 
@@ -33,13 +34,7 @@ public class UIitems : MonoBehaviour
 
     private void Update()
     {
-        if (Gamemanager.llave == true)
-        {
-            Time.timeScale = 0f;
-        }
-        else
-        {
-
-        }
+        
     }
+}
 

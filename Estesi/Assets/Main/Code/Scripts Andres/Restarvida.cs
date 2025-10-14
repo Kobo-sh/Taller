@@ -5,7 +5,7 @@ public class Vida : MonoBehaviour
 {
 
 
-           [SerializeField] private Gamemanager gameManager;
+     [SerializeField] private Gamemanager gameManager;
     private void OnCollisionEnter2D(Collision2D collision)
 
     {

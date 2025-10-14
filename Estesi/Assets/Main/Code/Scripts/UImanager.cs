@@ -5,21 +5,17 @@ using JetBrains.Annotations;
 
 public class UImanager : MonoBehaviour
 {
-
+ int vida =5;
 
     //corazon funcionamiento
   
     [SerializeField] private UIitems[] corazones;
-    [SerializeField] private Gamemanager VidaJugador;
-    private void Start()
-    {
-        VidaJugador = FindFirstObjectByType<Gamemanager>();
+    
+ 
 
-    }
-
-    private void ActivarCorazones(int vida)
+    public void ActivarCorazones(int vida)
     {
-        for (int i = 0; i < corazones.Length; i++)
+        for (int i = 0; i < 5; i++)
         {
             if (i < vida)
             {

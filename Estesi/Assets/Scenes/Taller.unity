@@ -2687,11 +2687,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2130101837200847169, guid: 839735983f5cbfe449f4f036fd830cbb, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1372.339
+      value: -1374.87
       objectReference: {fileID: 0}
     - target: {fileID: 2130101837200847169, guid: 839735983f5cbfe449f4f036fd830cbb, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -568.3071
+      value: -567.82
       objectReference: {fileID: 0}
     - target: {fileID: 2130101837200847169, guid: 839735983f5cbfe449f4f036fd830cbb, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2773,6 +2773,7 @@ MonoBehaviour:
   tiempo: 60
   tiempoE: 60
   llave: 0
+  uiManager: {fileID: 1819267977}
   _puntos: {fileID: 2048986666}
   _tiempoE: {fileID: 1987724829}
   _vida: {fileID: 1484339417}
@@ -3358,7 +3359,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   corazones: []
-  VidaJugador: {fileID: 0}
 --- !u!1 &495452087
 GameObject:
   m_ObjectHideFlags: 0
@@ -11472,7 +11472,6 @@ MonoBehaviour:
   - {fileID: 403286798}
   - {fileID: 1412865526}
   - {fileID: 490425540}
-  VidaJugador: {fileID: 0}
 --- !u!1 &1285557260 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4842683974733824881, guid: c2db404d63bafda40b5364ba0aaebc90, type: 3}
@@ -12452,7 +12451,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -577, y: 49}
+  m_AnchoredPosition: {x: -1051, y: 393}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1484339417
@@ -14407,6 +14406,56 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1819267976
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1819267978}
+  - component: {fileID: 1819267977}
+  m_Layer: 0
+  m_Name: UImanager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1819267977
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1819267976}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3807f8ddfe553984da25fae22144361b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  corazones:
+  - {fileID: 507013908}
+  - {fileID: 1340060114}
+  - {fileID: 403286798}
+  - {fileID: 1412865526}
+  - {fileID: 490425540}
+--- !u!4 &1819267978
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1819267976}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 938.3179, y: 567.1463, z: 6.401538}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1822655612
 GameObject:
   m_ObjectHideFlags: 0
@@ -31048,3 +31097,4 @@ SceneRoots:
   - {fileID: 160475371}
   - {fileID: 495452090}
   - {fileID: 1443136067}
+  - {fileID: 1819267978}

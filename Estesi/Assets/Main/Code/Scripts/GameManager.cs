@@ -12,6 +12,7 @@ public class Gamemanager : MonoBehaviour
     [SerializeField] private float tiempo = 60f;
     [SerializeField] private int tiempoE;
     [SerializeField] public bool llave;
+    [SerializeField] private UImanager uiManager;
    
 
     //TMP
@@ -40,13 +41,22 @@ public void salida()
         puntos += cantidad;
 
     }
+
+
     public void RestarVida(int cantidad)
     {
         vida -= cantidad;
-        
+
         if (vida <= 0)
         {
             SceneManager.LoadScene("Taller");
+        }
+
+        uiManager.ActivarCorazones(vida);
+
+        if (vida > 5)
+        {
+            vida = 5;
         }
 
     }
@@ -54,13 +64,22 @@ public void salida()
         public void Sumarvida(int cantidad)
     {
         vida += cantidad;
+        uiManager.ActivarCorazones(vida);
+        if (vida > 5)
+        {
+            vida = 5;
+        }
 
     }
 
+
+
+    
+            
             public void SumarTiempo(int cantidad)
     {
         tiempo += cantidad;
-
+        
     }
 
     private void Update()
