@@ -10,8 +10,9 @@ public class UImanager : MonoBehaviour
     //corazon funcionamiento
   
     [SerializeField] private UIitems[] corazones;
-    
- 
+    [SerializeField] private GameObject iconoLlave;
+
+
 
     public void ActivarCorazones(int vida)
     {
@@ -25,9 +26,11 @@ public class UImanager : MonoBehaviour
             {
                 corazones[i].DesactivarCorazon();
             }
-        
-        
-
         }
+    }
+
+    public void ActivarIconoLlave(bool tieneLlave)
+    {
+        iconoLlave.SetActive(tieneLlave);
     }
 }

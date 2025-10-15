@@ -13,7 +13,8 @@ public class Gamemanager : MonoBehaviour
     [SerializeField] private int tiempoE;
     [SerializeField] public bool llave;
     [SerializeField] private UImanager uiManager;
-   
+    [SerializeField] GameObject menuPausa;
+
 
     //TMP
     [SerializeField] private TMP_Text _puntos;
@@ -33,7 +34,8 @@ public void salida()
     public void estado()
     {
         llave = true;
-        
+        uiManager.ActivarIconoLlave(llave);
+
     }
 
     public void Sumarpunto(int cantidad)
@@ -71,11 +73,7 @@ public void salida()
         }
 
     }
-
-
-
     
-            
             public void SumarTiempo(int cantidad)
     {
         tiempo += cantidad;
@@ -84,6 +82,27 @@ public void salida()
 
     private void Update()
     {
+        {
+
+            //pausa
+
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                if (menuPausa.activeSelf)
+                {
+                    EstadoDelJuego("Play");
+                    menuPausa.SetActive(false);
+                }
+                else
+                {
+                    EstadoDelJuego("Pause");
+                    menuPausa.SetActive(true);
+                }
+
+            }
+        } 
+
+
         if (tiempo > 0)
         {
             tiempo -= Time.deltaTime;
@@ -107,6 +126,7 @@ public void salida()
             _llave.text = "Llave: " + llave; 
 
         }
+
     }
 
     public void EstadoDelJuego(string estado)
@@ -125,6 +145,8 @@ public void salida()
             break;
         }
     }    
+
+
 
 
     
