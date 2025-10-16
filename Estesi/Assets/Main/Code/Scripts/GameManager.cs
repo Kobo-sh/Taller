@@ -31,6 +31,21 @@ public void salida()
     SceneManager.LoadScene("Victoria");
 }
 
+    public void Reintentar(string Derrota)
+    { 
+        puntos = 0;
+        Time.timeScale = 1;
+        SceneManager.LoadScene("Taller");
+
+    }
+    public void JugarDeNuevo(string Victoria)
+    {
+        puntos = 0;
+        Time.timeScale = 1;
+        SceneManager.LoadScene("Taller");
+
+    }
+
     public void estado()
     {
         llave = true;
@@ -51,7 +66,7 @@ public void salida()
 
         if (vida <= 0)
         {
-            SceneManager.LoadScene("Taller");
+            SceneManager.LoadScene("Derrota");
         }
 
         uiManager.ActivarCorazones(vida);
@@ -111,7 +126,7 @@ public void salida()
         if (tiempo <= 0)
         {
 
-            SceneManager.LoadScene("Taller");
+            SceneManager.LoadScene("Derrota");
 
         }
 
